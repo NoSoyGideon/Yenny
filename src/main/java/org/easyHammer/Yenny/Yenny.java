@@ -35,7 +35,20 @@ public class Yenny {
                 .orElse(Double.NaN);
     }
 
+    public double median(List<? extends Number> list) {
+        // Copia mutable de la lista original
+        List<Number> copy = new ArrayList<>(list);
+        // Ordenar para poder recortar extremos
+        copy.sort(Comparator.comparingDouble(Number::doubleValue));
+        if(isEvenNumber(list.size())){
+            int index = (copy.size() / 2)-1;
+            return (copy.get(index).doubleValue()+copy.get(index+1).doubleValue())/2;
+        }else {
+            int index = ((copy.size()+1)/2)-1;
+            return copy.get(index).doubleValue();
+        }
 
+    }
 
 
 
@@ -73,6 +86,11 @@ public class Yenny {
             sum += n.doubleValue();
         }
         return sum;
+    }
+
+    public boolean isEvenNumber(int number) {
+        return number % 2 == 0;
+
     }
 
 

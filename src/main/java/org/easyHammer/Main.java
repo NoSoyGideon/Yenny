@@ -8,13 +8,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Yenny yenny = new Yenny();
-        List<Double> datosList = Arrays.asList(
-                3.4, 2.5, 4.8, 2.9, 3.6,
-        2.8, 3.3, 5.6, 3.7, 2.8,
-        4.4, 4.0, 5.2, 3.0, 4.8
+        List<Integer> datosList = Arrays.asList(
+         1,2,3,4,5,6,7,8,9,10
         );
 
-        System.out.println(yenny.mean(datosList,0.2));
+        System.out.println(yenny.median(datosList));
 
 
     }
