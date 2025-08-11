@@ -94,7 +94,16 @@ public class Yenny {
     }
 
 
+//-----------------measures of dispersion-----------------
 
+    public double range(List<? extends Number> list){
+        // Copia mutable de la lista original
+        List<Number> copy = new ArrayList<>(list);
+        // Ordenar para poder recortar extremos
+        copy.sort(Comparator.comparingDouble(Number::doubleValue));
+        return copy.get(copy.size()-1).doubleValue()-copy.get(0).doubleValue();
+
+    }
 
 
 }
