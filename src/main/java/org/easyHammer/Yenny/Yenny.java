@@ -105,5 +105,24 @@ public class Yenny {
 
     }
 
+    public double variance(List<? extends Number> list) {
+            double sampleVariance = mean(list);
+            double sampleSum = 0;
+
+            for (Number n : list) {
+                //potencia
+                sampleSum += (n.doubleValue()-sampleVariance)*(n.doubleValue()-sampleVariance);
+            }
+
+
+
+            return sampleSum/(list.size()-1);
+    }
+
+    public double standardDeviation(List<? extends Number> list) {
+        double variance = variance(list);
+        return Math.sqrt(variance);
+    }
+
 
 }

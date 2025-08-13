@@ -8,12 +8,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Yenny yenny = new Yenny();
-        List<Integer> envejecimiento = Arrays.asList(
-               4,24,1,70,27
+        List<Double> datos = Arrays.asList(
+                7.07, 7.00, 7.10, 6.97, 7.00, 7.03, 7.01, 7.01, 6.98, 7.08
         );
 
 
-        System.out.println(yenny.range(envejecimiento));
+        System.out.println(yenny.standardDeviation(datos)+ " and "+yenny.variance(datos) );
 
 
 
