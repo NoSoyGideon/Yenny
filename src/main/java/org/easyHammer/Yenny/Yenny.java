@@ -70,6 +70,31 @@ public class Yenny {
         double rest = number%1;
         return (int)(number-rest);
     }
+    public int getUnit(Number number,int times) {
+        if(times == 0 ){
+            return roundDown(number.doubleValue());
+        }
+
+        if(times>=0) {
+            int divisor = 1;
+            for (int i = 1; i < times; i++) {
+                divisor *= 10;
+            }
+            return (number.intValue() / divisor) % 10;
+        }else{
+            times *= -1;
+            // 1. Obtener la parte decimal
+            double decimalPart = number.doubleValue() - number.intValue();
+
+            // 2. Mover la coma decimal a la derecha según la posición (times)
+            double multiplied = decimalPart * Math.pow(10, Math.abs(times));
+
+            // 3. Obtener el dígito deseado
+            return (int) (multiplied % 10);
+        }
+    }
+
+
 
 
 
